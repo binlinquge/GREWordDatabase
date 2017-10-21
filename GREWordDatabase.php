@@ -3,7 +3,7 @@
   $explanation = $_POST["explanation"];
   if ($word != "")
   {
-    $link = mysql_connect("localhost", "gre", "grewin") or die("Could not connect : " . mysql_error());
+    $link = mysql_connect("localhost", "", "") or die("Could not connect : " . mysql_error());
     mysql_select_db("vocabulary") or die("Could not select database");
     $sql = "SELECT word from word where word=\"$word\"";
     $result = mysql_query($sql);
@@ -139,7 +139,7 @@
   {
     echo "Search Result:<br>";
     echo "<pre>";
-    $link = mysql_connect("localhost", "gre", "grewin") or die("Could not connect : " . mysql_error());
+    $link = mysql_connect("localhost", "", "") or die("Could not connect : " . mysql_error());
     mysql_select_db("vocabulary") or die("Could not select database");
     $date = $date.'%';
     $sql = "SELECT * FROM word WHERE submission_date like \"$date\"";
@@ -157,7 +157,7 @@
   {
     echo "Search Result:<br>";
     echo "<pre>";
-    $link = mysql_connect("localhost", "gre", "grewin") or die("Could not connect : " . mysql_error());
+    $link = mysql_connect("localhost", "", "") or die("Could not connect : " . mysql_error());
     mysql_select_db("vocabulary") or die("Could not select database");
     $sql = "SELECT * FROM word WHERE word = \"$search_word\"";
     $result = mysql_query($sql);
@@ -170,7 +170,7 @@
   {
     echo "Today's work:<br>";
     echo "<pre>";
-    $link = mysql_connect("localhost", "gre", "grewin") or die("Could not connect : " . mysql_error());
+    $link = mysql_connect("localhost", "", "") or die("Could not connect : " . mysql_error());
     mysql_select_db("vocabulary") or die("Could not select database");
     $today = date("Y-m-d");
     $today = $today.'%';
